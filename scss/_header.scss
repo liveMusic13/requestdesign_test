@@ -1,0 +1,332 @@
+@import './variables';
+
+.header {
+	> .header__container {
+		height: 123px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media (max-width: 479.98px) {
+			height: 90px;
+			position: relative;
+		}
+
+		> .header__back-menu_mobile {
+			display: none;
+			position: absolute;
+			top: 90px;
+			left: 0;
+			z-index: 101;
+			background-color: $color_seven;
+			width: 375px;
+			height: 390px;
+
+			> .header__menu {
+				padding: 56px 0px 38px 64px;
+
+				> .header__menu-list {
+					margin-bottom: 45px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					> .header__menu-link {
+						font-size: 15px;
+						line-height: calc(17 / 15);
+						color: $color_one;
+					}
+				}
+			}
+		}
+
+		> .header__block-menu_mobile {
+			display: none;
+
+			@media (max-width: 479.98px) {
+				display: flex;
+				align-items: center;
+			}
+
+			> .header__logo {
+				width: 60px;
+				height: 60px;
+				margin-right: 67px;
+			}
+
+			> .header__search_mobile {
+				width: 20px;
+				height: 20px;
+				margin-right: 15px;
+			}
+
+			> .header__block-icon {
+				margin-left: 15px;
+				background-color: rgba(249, 249, 249, 1);
+				position: relative;
+				width: 46px;
+				height: 46px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				> .header__icon {
+				}
+			}
+
+			> .header__block-icon_mobile {
+				margin-left: 15px;
+				background-color: rgba(249, 249, 249, 1);
+				position: relative;
+				width: 46px;
+				height: 46px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				> span {
+					width: 18px;
+					height: 2px;
+					background-color: $color_one;
+					display: inline-block;
+					position: absolute;
+					top: 22px;
+				}
+
+				&::before {
+					content: '';
+					width: 18px;
+					height: 2px;
+					background-color: $color_one;
+					position: absolute;
+					top: 15px;
+				}
+
+				&::after {
+					content: '';
+					width: 18px;
+					height: 2px;
+					background-color: $color_one;
+					position: absolute;
+					bottom: 15px;
+				}
+			}
+
+			.header__block-icon_mobile-close {
+				display: none;
+				margin-left: 15px;
+				background-color: rgba(249, 249, 249, 1);
+				position: relative;
+				width: 46px;
+				height: 46px;
+				border-radius: 50%;
+				align-items: center;
+				justify-content: center;
+
+				&::before {
+					content: '';
+					width: 18px;
+					height: 2px;
+					background-color: $color_one;
+					position: absolute;
+					top: 22px;
+					transform: rotate(-135deg);
+				}
+
+				&::after {
+					content: '';
+					width: 18px;
+					height: 2px;
+					background-color: $color_one;
+					position: absolute;
+					bottom: 22px;
+					transform: rotate(135deg);
+				}
+			}
+
+			> div {
+				margin-left: 15px;
+				position: relative;
+				background-color: $color_two;
+				padding: 13px;
+				border-radius: 50%;
+				width: 49px;
+				height: 49px;
+
+				> .header__icon {
+					width: 24px;
+					height: 24px;
+				}
+
+				> .header__num {
+					position: absolute;
+					top: 0;
+					right: 0;
+					background-color: $color_five;
+					color: $color_seven;
+					border-radius: 50%;
+					font-size: 12px;
+					font-weight: 700;
+					text-align: center;
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+
+		> .header__block-menu {
+			display: flex;
+			align-items: center;
+			gap: 50px;
+
+			@media (max-width: 479.98px) {
+				display: none;
+			}
+
+			> .header__logo {
+				width: 70px;
+				height: 70px;
+				margin-right: 10px;
+			}
+
+			> .header__menu {
+				display: flex;
+				gap: 45px;
+
+				> .header__menu-list {
+					> .header__menu-link {
+						color: $color_one;
+						font-size: 15px;
+					}
+				}
+			}
+			> img {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		> .header__block-icons {
+			display: flex;
+			gap: 30px;
+
+			@media (max-width: 479.98px) {
+				display: none;
+			}
+
+			> .header__block-icon {
+				position: relative;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&:hover .header__block-triangle {
+					display: block;
+				}
+
+				> .header__block-triangle {
+					display: none;
+					position: absolute;
+					top: 0;
+					left: -20px;
+					z-index: 3;
+					width: 200px;
+					height: 100px;
+
+					> .header__triangle {
+						position: absolute;
+						top: 77px;
+						left: 40px;
+						z-index: 5;
+						width: 0;
+						height: 0;
+						border-left: 9px solid transparent;
+						border-right: 9px solid transparent;
+						border-bottom: 9px solid $color_seven;
+					}
+
+					> .header__user-menu {
+						position: absolute;
+						top: 86px;
+						left: -133px;
+						z-index: 4;
+						width: 405px;
+						height: 389px;
+						background-color: $color_seven;
+						border-radius: 20px;
+						box-shadow: 0px 14px 75px rgba(0, 0, 0, 0.13);
+
+						> .menu-user__block-user {
+							display: flex;
+							gap: 20px;
+							align-items: center;
+							padding: 30px;
+
+							> div {
+								background-color: $color_two;
+								padding: 13px;
+								border-radius: 50%;
+								width: 49px;
+								height: 49px;
+
+								> .menu-user__image {
+									width: 24px;
+									height: 24px;
+								}
+							}
+							> .menu-user__name {
+							}
+						}
+
+						> .menu-user__menu {
+							> .menu-user__list {
+								padding: 20px 30px;
+								border-top: 1px solid rgba(242, 242, 242, 1);
+
+								> .menu-user__link {
+									color: $color_one;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			> div {
+				position: relative;
+				background-color: $color_two;
+				padding: 13px;
+				border-radius: 50%;
+				width: 49px;
+				height: 49px;
+
+				> .header__icon {
+					width: 24px;
+					height: 24px;
+				}
+
+				> .header__num {
+					position: absolute;
+					top: 0;
+					right: 0;
+					background-color: $color_five;
+					color: $color_seven;
+					border-radius: 50%;
+					font-size: 12px;
+					font-weight: 700;
+					text-align: center;
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+	}
+}
